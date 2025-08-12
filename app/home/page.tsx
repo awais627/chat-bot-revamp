@@ -50,8 +50,8 @@ const Home = () => {
           subtitle="Connection status"
         />
         <StatsCard
-          title="Active Users"
-          value="10,500"
+          title="Recent Articles"
+          value="10"
           icon={HiOutlineBookOpen}
           customClassName="text-dark-blue"
           subtitle="Latest knowledge base articles"

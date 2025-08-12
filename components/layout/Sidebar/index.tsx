@@ -22,9 +22,6 @@ const Sidebar: React.FC = () => {
   const iconClasses = (isActive: boolean) =>
     `${isActive ? 'text-white' : 'text-black group-hover:text-white'}`;
 
-  const badgeClasses = (isActive: boolean, defaultClass: string) =>
-    `${isActive ? 'bg-white text-blue-medium' : defaultClass}`;
-
   return (
     <aside
       className={`${styles.sidebar} flex h-screen w-64 flex-col px-2 py-6 text-sm shadow-[11px_0px_16px_-16px_purple]`}
@@ -41,7 +38,7 @@ const Sidebar: React.FC = () => {
           Dashboard
         </Link>
 
-        <span className="text-gray-medium-light mt-4 text-xs font-semibold uppercase tracking-wider">
+        <span className="text-gray-medium mt-4 px-3 text-xs uppercase tracking-wider">
           Customer Support
         </span>
         <Link
@@ -58,7 +55,7 @@ const Sidebar: React.FC = () => {
           </span>
         </Link>
 
-        <span className="text-gray-medium-light mt-4 text-xs font-semibold uppercase tracking-wider">
+        <span className="text-gray-medium mt-4 px-3 text-xs uppercase tracking-wider">
           Knowledge Base
         </span>
         <Link

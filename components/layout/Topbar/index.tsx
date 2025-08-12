@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
 import { FaRegUser } from 'react-icons/fa6';
 import { MdOutlineLogout } from 'react-icons/md';
-// import { useHandleClickOutside } from '@/hooks/useClickOutside';
+import { useHandleClickOutside } from '@/hooks/useClickOutside';
 
 interface User {
   name: string;
@@ -19,7 +19,7 @@ const TopBar: React.FC<TopBarProps> = ({ user }) => {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   // calling Handle click outside hook to close dropdown
-  // useHandleClickOutside(dropdownRef, () => setIsOpen(false));
+  useHandleClickOutside(dropdownRef, () => setIsOpen(false));
 
   return (
     <header className="flex w-full items-center justify-end border-b bg-white px-6 py-3 shadow-[0px_13px_16px_-19px_#6518cf]">
