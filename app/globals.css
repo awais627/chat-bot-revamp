@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --gradient-primary: linear-gradient(#0575e6 0%, #021b79 100%);
+  --gradient-purple: linear-gradient(to right, #9333ea, #6b21a8);
+  --bg-secondary: #f5f6f8;
+  --bg-gray: #8e8c8c;
+  --bg-gray-light: #d9d9d9;
+  --bg-tertiary: #6518cf;
+  --bg-blue-medium: #407bfd;
+  --bg-blue-light: #cedaf1;
+  --bg-purple: #6518cf;
+  --shadow: 11px 0px 16px -16px #6518cf;
+  --bg-green: #69b072;
+  --bg-dark-blue: #042484;
+  --bg-red: #e81434;
+  --text-gray: #9ca3af;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0447af;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Public Sans', sans-serif;
+}
+
+button,
+a {
+  cursor: pointer;
+}
