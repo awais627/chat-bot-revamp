@@ -38,9 +38,6 @@ const StatsCard: React.FC<StatsCardProps> = ({
           <h3 className="text-2xl font-bold text-gray-700">{value}</h3>
         </div>
       </div>
-      {/* <p className="mt-1 text-xs text-gray-400">{subtitle}</p> */}
-      {/* <hr className="my-2 border-gray-200" /> */}
-
       {percentage !== undefined && comparisonText && (
         <div className="mt-2 flex items-center gap-1 text-sm">
           {isPositive ? (
