@@ -22,7 +22,7 @@ export default function RootLayout({ children }: rootLayoutProps) {
   return (
     <html lang="en">
       <body className="flex" suppressHydrationWarning>
-        <div className="flex-[0_0-250px]">
+        <div className="flex-[0_0_250px]">
           <Sidebar />
         </div>
         <div className="container">
