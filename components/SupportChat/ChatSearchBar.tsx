@@ -1,12 +1,8 @@
 import Input from '@/components/ui/Input/';
 import { CiSearch } from 'react-icons/ci';
+import type { SearchUserProps } from './ChatSearchBar.types';
 
-interface SearchUserProps {
-  searchUser: string;
-  setSearchUser: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const SearchUser: React.FC<SearchUserProps> = ({
+export const SearchUser: React.FC<SearchUserProps> = ({
   searchUser,
   setSearchUser
 }) => {
@@ -27,5 +23,3 @@ const SearchUser: React.FC<SearchUserProps> = ({
     </div>
   );
 };
-
-export default SearchUser;

@@ -1,17 +1,8 @@
 'use client';
-import UserAvatar from './UserAvatar';
+import { UserAvatar } from './UserAvatar';
+import type { ChatUserListItemProps } from './UserListItem.types';
 
-interface ChatUserListItemProps {
-  chatId: string | number;
-  name: string;
-  lastMessage?: string;
-  time?: string;
-  imageUrl?: string;
-  isActive?: boolean;
-  onClick?: () => void;
-}
-
-const ChatUserItem: React.FC<ChatUserListItemProps> = ({
+export const ChatUserItem: React.FC<ChatUserListItemProps> = ({
   name,
   lastMessage,
   time,
@@ -45,5 +36,3 @@ const ChatUserItem: React.FC<ChatUserListItemProps> = ({
     </div>
   );
 };
-
-export default ChatUserItem;

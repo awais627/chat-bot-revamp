@@ -1,16 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import ChatUserListItem from './UserListItem';
+import { ChatUserItem } from './UserListItem';
 import { useChat } from '@/contexts/chatContext';
-import UserAvatar from './UserAvatar';
-import SearchUser from './ChatSearchBar';
+import { UserAvatar } from './UserAvatar';
+import { SearchUser } from './ChatSearchBar';
+import type { ChatSidebarProps } from './ChatSidebar.types';
 
-interface ChatSidebarProps {
-  onSelectChat: (chatId: string) => void;
-}
-
-const ChatSidebar: React.FC<ChatSidebarProps> = ({ onSelectChat }) => {
+export const ChatSidebar: React.FC<ChatSidebarProps> = ({ onSelectChat }) => {
   const [activeChatId, setActiveChatId] = useState<string | null>(null);
   const [searchUser, setSearchUser] = useState('');
   const { users, setSelectedUser } = useChat();
@@ -41,21 +38,32 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({ onSelectChat }) => {
           <small className="flex text-xs">My Account</small>
         </div>
       </div>
-      <SearchUser searchUser={searchUser} setSearchUser={setSearchUser} />
-      {filterSearch.map((user) => (
-        <ChatUserListItem
-          key={user.id}
-          chatId={user.id}
-          name={user.name}
-          lastMessage={user.lastMessage}
-          time={user.time}
-          imageUrl={user.avatar}
-          isActive={activeChatId === user.id}
-          onClick={() => handleUserClick(user.id)}
-        />
-      ))}
+      {users.length > 0 && (
+        <SearchUser searchUser={searchUser} setSearchUser={setSearchUser} />
+      )}
+
+      {users.length === 0 ? (
+        <p className="py-4 text-center text-sm text-gray-medium">
+          No user found
+        </p>
+      ) : filterSearch.length > 0 ? (
+        filterSearch.map((user) => (
+          <ChatUserItem
+            key={user.id}
+            chatId={user.id}
+            name={user.name}
+            lastMessage={user.lastMessage}
+            time={user.time}
+            imageUrl={user.avatar}
+            isActive={activeChatId === user.id}
+            onClick={() => handleUserClick(user.id)}
+          />
+        ))
+      ) : searchUser.trim().length > 0 ? (
+        <p className="py-4 text-center text-sm text-gray-medium">
+          No user found
+        </p>
+      ) : null}
     </div>
   );
 };
-
-export default ChatSidebar;

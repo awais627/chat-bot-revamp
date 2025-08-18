@@ -1,11 +1,4 @@
-interface InputProps {
-  value: string;
-  placeholder?: string;
-  type?: string;
-  name: string;
-  onChange: (value: string) => void;
-  className?: string;
-}
+import type { InputProps } from './types';
 
 const Input: React.FC<InputProps> = ({
   value,

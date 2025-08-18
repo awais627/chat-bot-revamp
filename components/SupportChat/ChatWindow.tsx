@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
 import ChatIcon from '@/images/chat-icon.png';
-import ChatHeader from './ChatHeader';
-import ChatMessage from './ChatMessage';
+import { ChatHeader } from './ChatHeader';
+import { MessageList } from './ChatMessage';
 import { useChat } from '@/contexts/chatContext';
 
-const ChatWindow = () => {
+export const ChatWindow = () => {
   const { selectedUser } = useChat();
 
   if (!selectedUser) {
@@ -20,9 +20,7 @@ const ChatWindow = () => {
   return (
     <div className="flex h-full flex-col">
       <ChatHeader />
-      <ChatMessage />
+      <MessageList />
     </div>
   );
 };
-
-export default ChatWindow;

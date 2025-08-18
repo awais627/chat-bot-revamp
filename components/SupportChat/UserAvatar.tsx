@@ -1,17 +1,13 @@
 import Image from 'next/image';
+import type { UserAvatarProps } from './UserAvatar.types';
 
-interface UserAvatarProps {
-  name: string;
-  imageUrl?: string;
-  className?: string;
-}
 const getInitials = (name: string) => {
   if (!name) {
     return;
   }
   return name.charAt(0).toUpperCase();
 };
-const userAvatar: React.FC<UserAvatarProps> = ({
+export const UserAvatar: React.FC<UserAvatarProps> = ({
   name,
   className,
   imageUrl
@@ -38,5 +34,3 @@ const userAvatar: React.FC<UserAvatarProps> = ({
     </>
   );
 };
-
-export default userAvatar;

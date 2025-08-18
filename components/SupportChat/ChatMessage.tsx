@@ -1,7 +1,6 @@
-'use client';
 import { useChat } from '@/contexts/chatContext';
 
-const MessageList = () => {
+export const MessageList = () => {
   const { selectedUser } = useChat();
 
   if (!selectedUser) {
@@ -43,5 +42,3 @@ const MessageList = () => {
     </div>
   );
 };
-
-export default MessageList;
